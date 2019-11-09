@@ -37,34 +37,34 @@ const questionSample1 = {
     },
     computed: {
         shapingCheckNames: function(){
-            var shapeCheckNameArray = []
-            for(var checkName of this.checkNames){
-                var checkNameSplit = checkName.split('-')
+            var shapeCheckNameArray = [];
+            for(var i=0; i<this.checkNames.length;i++){
+                var checkNameSplit = this.checkNames[i].split('-');
                 shapeCheckNameArray.push({
                     questionNumber:parseInt(checkNameSplit[0]),
                     questionId: checkNameSplit[1],
                     checkNumber: parseInt(checkNameSplit[2])
                 })
             }
-            return shapeCheckNameArray
+            return shapeCheckNameArray;
         }
     },
     methods:{
         closeReadyModal: function() {
             window.scrollTo(0,0);
-            this.readyModal = false
+            this.readyModal = false;
         },
         checkAnswerClick: function () {
             var checkCount=1;
-            var checkAnswerFlg=true
+            var checkAnswerFlg=true;
             
             //shapingeCheckNamsからキーがquestionNumberのもののみを取得
             var questionNumbers = this.shapingCheckNames.concat().map(function(row){
                 return[row['questionNumber']]
                 }).reduce(function(a,b){
                     return a.concat(b)
-                })
-            var checkErrorMessage='以下の問題の選択がされていません。\n'
+                });
+            var checkErrorMessage='以下の問題の選択がされていません。\n';
             //重複の削除
             questionNumbers = questionNumbers.filter(function(x,i,self){
                 return self.indexOf(x) === i;
@@ -95,8 +95,8 @@ const questionSample1 = {
             var okCnt = 0
             var checkNames = this.shapingCheckNames.sort(this.sortObjects)
 
-            for(var checkName of checkNames){
-                while(checkName['questionId'] !== this.QuestionObjects[index].questionId){
+            for(var i=0;i<checkNames.length;i++){
+                while(checkNames[i]['questionId'] !== this.QuestionObjects[index].questionId){
                     if(this.QuestionObjects[index].answer.length === answerIndex){
                         okCnt += 1
                     }
@@ -106,8 +106,8 @@ const questionSample1 = {
                 if(!this.QuestionObjects[index].yourAnswer){
                     this.QuestionObjects[index]['yourAnswer']= []
                 }
-                this.QuestionObjects[index].yourAnswer.push(checkName['checkNumber'])
-                if(parseInt(checkName['checkNumber']) !== this.QuestionObjects[index].answer[answerIndex]){
+                this.QuestionObjects[index].yourAnswer.push(checkNames[i]['checkNumber'])
+                if(parseInt(checkNames[i]['checkNumber']) !== this.QuestionObjects[index].answer[answerIndex]){
                     answerIndex += 100;
                     continue;
                 }
