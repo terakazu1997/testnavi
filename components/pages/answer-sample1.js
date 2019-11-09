@@ -64,7 +64,7 @@ const answerSample1 = {
     },
     methods: {
         restartClick : function () {
-            window.scrollTo(0,0);
+            window.scrollTo(0,0)
             this.$router.push({name: 'questionSample1'})
         }
     }

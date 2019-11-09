@@ -16,10 +16,10 @@ const timer= {
     methods: {
         count: function() {
             if (this.sec <= 0 && this.min >= 1) {
-                this.min --;
-                this.sec = 59;
+                this.min --
+                this.sec = 59
             } else {
-                this.sec --;
+                this.sec --
             }
         },
     start: function() {

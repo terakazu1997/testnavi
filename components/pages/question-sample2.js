@@ -52,7 +52,7 @@ const questionSample2 = {
     */}).toString().match(/(?:\/\*(?:[\s\S]*?)\*\/)/).pop().replace(/^\/\*/, "").replace(/\*\/$/, ""),
     methods: {
         checkAnswerClick : function () {
-            window.scrollTo(0,0);
+            window.scrollTo(0,0)
             this.$router.push({name: 'answerSample1'})
         }
     }

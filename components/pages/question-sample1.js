@@ -1,4 +1,4 @@
-var timerId;
+var timerId
 const questionSample1 = {
     template: (function() {/*
         <main>
@@ -37,37 +37,37 @@ const questionSample1 = {
     },
     computed: {
         shapingCheckNames: function(){
-            var shapeCheckNameArray = [];
+            var shapeCheckNameArray = []
             for(var i=0; i<this.checkNames.length;i++){
-                var checkNameSplit = this.checkNames[i].split('-');
+                var checkNameSplit = this.checkNames[i].split('-')
                 shapeCheckNameArray.push({
                     questionNumber:parseInt(checkNameSplit[0]),
                     questionId: checkNameSplit[1],
                     checkNumber: parseInt(checkNameSplit[2])
                 })
             }
-            return shapeCheckNameArray;
+            return shapeCheckNameArray
         }
     },
     methods:{
         closeReadyModal: function() {
-            window.scrollTo(0,0);
-            this.readyModal = false;
+            window.scrollTo(0,0)
+            this.readyModal = false
         },
         checkAnswerClick: function () {
-            var checkCount=1;
-            var checkAnswerFlg=true;
+            var checkCount=1
+            var checkAnswerFlg=true
             
             //shapingeCheckNamsからキーがquestionNumberのもののみを取得
             var questionNumbers = this.shapingCheckNames.concat().map(function(row){
                 return[row['questionNumber']]
                 }).reduce(function(a,b){
                     return a.concat(b)
-                });
-            var checkErrorMessage='以下の問題の選択がされていません。\n';
+                })
+            var checkErrorMessage='以下の問題の選択がされていません。\n'
             //重複の削除
             questionNumbers = questionNumbers.filter(function(x,i,self){
-                return self.indexOf(x) === i;
+                return self.indexOf(x) === i
             })
             for(var i=1; i <11; i++){
                 if(questionNumbers.indexOf(i) === -1 ){
@@ -83,11 +83,11 @@ const questionSample1 = {
             }
         },
         sortObjects: function(a,b) {
-            if (a.questionNumber < b.questionNumber) return -1;
-            if (a.questionNumber > b.questionNumber) return 1;
-            if (a.checkNumber < b.checkNumber) return -1;
-            if (a.checkNumber > b.checkNumber) return 1;
-            return 0;
+            if (a.questionNumber < b.questionNumber) return -1
+            if (a.questionNumber > b.questionNumber) return 1
+            if (a.checkNumber < b.checkNumber) return -1
+            if (a.checkNumber > b.checkNumber) return 1
+            return 0
         },
         checkAnswer: function () {
             var index = 0
@@ -100,7 +100,7 @@ const questionSample1 = {
                     if(this.QuestionObjects[index].answer.length === answerIndex){
                         okCnt += 1
                     }
-                    answerIndex = 0;
+                    answerIndex = 0
                     index += 1
                 }
                 if(!this.QuestionObjects[index].yourAnswer){
@@ -108,15 +108,15 @@ const questionSample1 = {
                 }
                 this.QuestionObjects[index].yourAnswer.push(checkNames[i]['checkNumber'])
                 if(parseInt(checkNames[i]['checkNumber']) !== this.QuestionObjects[index].answer[answerIndex]){
-                    answerIndex += 100;
-                    continue;
+                    answerIndex += 100
+                    continue
                 }
-                answerIndex += 1;
+                answerIndex += 1
             }
             if(QuestionObjects[index].answer.length === answerIndex){
                 okCnt += 1
             }
-            window.scrollTo(0,0);
+            window.scrollTo(0,0)
             this.$router.push({name: 'answerSample1' ,params: {okCnt: okCnt ,QuestionObjects: this.QuestionObjects}})
         }
     }
