@@ -1,0 +1,100 @@
+main #inContent{
+    padding-top: 60px;
+    text-align:center;
+    margin-bottom: 90px;
+    width:90%;
+    margin: 0 auto;
+}
+
+#inContent .box .question1-item{
+    display: inline-block;
+    margin-bottom: 50px;
+    width: 100%;
+    border: solid #111 4px;
+    margin-bottom: 38px;
+    padding-bottom: 1em;
+    background-color: #fffbf1;
+}
+
+#inContent .box .question1-item .question-count{
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 35px;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #FFF;
+    background-color: #6a8494;
+}
+
+
+
+#inContent .box .question1-item .question-title{
+    display: table;
+    height: 150px;
+    width: 100%;
+    background-color: #000;
+    vertical-align: middle;
+}
+#inContent .box .question1-item .question-title .question{
+    color: #FFF;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 1000px;
+    
+}
+
+input.check{
+    position: absolute;
+    left: -9999px;
+}
+
+.question1-item label {
+    display: block;
+    position: relative;
+    margin: 20px;
+    padding: 15px 30px 15px 62px;
+    border: 3px solid #111;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.question1-item label::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: 52px;
+    border: 3px solid #111;
+    border-radius: 100px;
+    transition: background-color .2s;
+    
+}
+
+.question1-item label:hover, input:focus + label {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+}
+
+input:checked + label {
+    background-color: #6febf6;
+}
+
+input:checked + label::before {
+    background-color: #111;
+}
+#send-answer{
+    font-size:18px;
+    background: #26c7d3;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    color:#FFF;
+    border-bottom: solid 3px #5e7fca;
+    height: 60px;
+    width: 300px;
+}
+#send-answer:hover{
+    box-shadow: 0 0 5px 2px rgba(11, 148, 240, 0.815);
+}

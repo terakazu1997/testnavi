@@ -1,0 +1,107 @@
+main{
+    word-wrap: break-word;
+}
+main #inContent{
+    padding-top: 60px;
+    text-align:center;
+    margin-bottom: 90px;
+    width: 90%;
+    margin: 0 auto;
+}
+main #inContent .answer-head h3{
+    width: 100%;
+    border: solid 4px #111;
+    color: #3aadd5;
+    font-size: 20px;
+    font-weight: 700;
+    box-sizing: border-box;
+    height: 78px;
+    line-height: 70px;
+    padding-left: 37px;
+    margin: 0;
+}
+main #inContent .answer-head .result-message{
+    border: solid 4px #111;
+    border-top: none;
+    background-color: #ebe65c;
+    padding: 10px 37px 18px;
+    box-sizing: border-box;
+    position: relative;
+}
+main #inContent .answer-head .result-message p.small{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    color: #3aadd5;
+    margin-bottom: 15px;
+
+}
+main #inContent .answer-head .result-message p.large{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+
+
+#inContent .box .answer-item{
+    display: inline-block;
+    margin-bottom: 50px;
+    width: 100%;
+    border: solid #111 4px;
+    margin-bottom: 38px;
+    padding-bottom: 1em;
+    background-color: #fffbf1;
+}
+
+#inContent .answer-item .question-title h2{
+    font-size: 20px;
+    
+}
+.clear-fix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#inContent .answer-item li {
+    float: left;
+    width: 45%;
+    height: 80px;
+    line-height: 72px;
+    text-align: center;
+    border: solid #111 4px;
+    background-color: #fff;
+    margin-left: 3%;
+    margin-bottom: 20px;
+}
+#inContent .answer-item p.answer-main {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 3%;
+}
+#inContent .answer-item p.answer-sentence{
+    font-size: 14px;
+    text-align: left;
+    padding-left: 3%;
+}
+
+
+#send-answer{
+    font-size:18px;
+    background: #26c7d3;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    color:#FFF;
+    border-bottom: solid 3px #5e7fca;
+    height: 60px;
+    width: 300px;
+}
+#send-answer:hover{
+    box-shadow: 0 0 5px 2px rgba(11, 148, 240, 0.815);
+}

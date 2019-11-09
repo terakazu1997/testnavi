@@ -1,0 +1,16 @@
+
+@import url("timer.css");
+@import url("question-modal.css");
+@import url("question-sample1.css");
+@import url("answer-sample1.css");
+
+li{
+    list-style: none;
+}
+ul{
+    padding:0;
+    width: 100%;
+}
+main{
+    word-wrap: break-word;
+}

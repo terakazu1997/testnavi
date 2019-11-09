@@ -1,0 +1,14 @@
+#timer {
+    background-color: black;
+    
+    width:350px;
+    position:absolute;
+    top: 30px;
+    height: 45px;
+    font-size:30px;
+}
+
+#timer p{
+    margin: 0;
+    color:white;
+}
